@@ -31,6 +31,27 @@ def process_machine(machine_file):
         csv_reader = csv.reader(file)
         rows = list(csv_reader)
 
+        # Read in transitions
+        transition_dict = {}
+        for row in rows[7:]:
+            curr_state = row[0]
+            read_symbol = row[1]
+            next_state = row[2]
+            write_symbol = row[3]
+            direction = row[4]
+
+            if curr_state not in transition_dict:
+                transition_dict[curr_state] = {}
+            transition_dict[curr_state][read_symbol] = (next_state, write_symbol, direction)
+
+            # Visualization of the structure
+            # transitions = {
+            #     'q0': {
+            #         'a': ('q1', 'b', 'R'),
+            #         'b': ('q2', 'a', 'L'),
+            #     },
+            # }
+
         # Formal definition of the TM
         machine = Machine(
           desc=rows[0][0],
@@ -40,11 +61,36 @@ def process_machine(machine_file):
           start=rows[4][0],
           accept=rows[5],
           reject=rows[6],
-          transitions=rows[7:] # For now going to use a list but may change
+          transitions=transition_dict
         )
 
         print(machine)
         return machine
+    
+def run_machine_on_string(string, start_state, transitions):
+    # Bfs
+    configurations = [["", start_state, string]]
+    curr_state = start_state
+    # # [”aa”,”q1”, ”a”] this is a configuration
+    # for i, char in enumerate(string):
+    #     moves = []
+    #     prev_configuration = configurations[i]
+    #     possible_transitions = transitions[curr_state]
+    #     if char in possible_transitions: # need to add ALL of the possible moves here
+    #         moves.append([])
+    #     configurations.append(moves)
+
+    # Breadth first search
+    while configurations:
+        moves = []
+
+        for c in configurations: # Explore every node at this level
+            left_tape, curr_state, right_tape = c
+
+            if not right_tape: # Add another blank if necessary
+                right_tape = "_"
+
+            next_char_to_process = right_tape[0]
 
 def main():
     # To run: python3 traceTM_fdrake_program.py machine.csv input_string -t {depth}
@@ -67,6 +113,9 @@ def main():
 
     # Process machine
     machine = process_machine(args.machine_file)
+
+    # Run the machine on the string
+    run_machine_on_string(args.input_string, machine.start, machine.transitions)
 
 if __name__ == "__main__":
     main()
