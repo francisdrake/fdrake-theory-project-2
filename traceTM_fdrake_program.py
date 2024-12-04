@@ -1,3 +1,7 @@
+import sys
+import argparse
+import csv
+from dataclasses import dataclass
 '''
 INPUTS:
   The inputs to your program should include:
@@ -11,6 +15,61 @@ INPUTS:
   You may want to design it so that you can enter multiple strings one after another.
 '''
 
+@dataclass
+class Machine:
+    desc: str
+    states: list
+    sigma: list
+    gamma: list
+    start: str
+    accept: list
+    reject: list
+    transitions: list
+
+def process_machine(machine_file):
+    with open(machine_file, mode='r', newline='', encoding='utf-8') as file:
+        csv_reader = csv.reader(file)
+        rows = list(csv_reader)
+
+        # Formal definition of the TM
+        machine = Machine(
+          desc=rows[0][0],
+          states=rows[1],
+          sigma=rows[2],
+          gamma=rows[3],
+          start=rows[4][0],
+          accept=rows[5],
+          reject=rows[6],
+          transitions=rows[7:] # For now going to use a list but may change
+        )
+
+        print(machine)
+        return machine
+
+def main():
+    # To run: python3 traceTM_fdrake_program.py machine.csv input_string -t {depth}
+    parser = argparse.ArgumentParser()
+
+    # Positional arguments
+    parser.add_argument('machine_file', type=str, help="Name of the file describing the machine")
+    parser.add_argument('input_string', type=str, help="Input string to run")
+
+    # Termination flag (optional)
+    parser.add_argument('-t', '--depth', type=int, help="Stop at certain depth")
+
+    # Parse arguments
+    args = parser.parse_args()
+
+    # Access parsed arguments
+    print("Machine file:", args.machine_file)
+    print("Input string:", args.input_string)
+    print("Termination condition:", args.depth)
+
+    # Process machine
+    machine = process_machine(args.machine_file)
+
+if __name__ == "__main__":
+    main()
 '''
 OUPUTS:
     All runs should first echo the name of the machine (from line 1), the initial string, the
