@@ -1,6 +1,9 @@
 # Theory Project 2 - Tracing NTM Behavior
 # Francis Drake (fdrake)
 
+# example to run:
+# python3 traceTM_program_fdrake.py traceTM_testfiles_fdrake/equal_01s_fdrake.csv traceTM_testfiles_fdrake/equal_01s_input_fdrake.txt -t 50 -o accuracy_output_fdrake.txt
+
 import argparse
 import csv
 from dataclasses import dataclass
@@ -76,6 +79,7 @@ def run_machine_on_string(string, start_state, transitions, qacc, qrej, max_dept
 
     # Breadth first search
     while configurations:
+        temp_degree_count = 0
         moves = []
 
         for c in configurations: # Explore every node at this level
@@ -87,10 +91,10 @@ def run_machine_on_string(string, start_state, transitions, qacc, qrej, max_dept
             next_char_to_process = right_tape[0] # Char under the head
 
             # Look for possible moves and loop through them if there are any
+            temp_degree_count = 0
             if curr_state in transitions and next_char_to_process in transitions[curr_state]:
-                temp_degree_count = 0
+                temp_degree_count = len(transitions[curr_state][next_char_to_process])
                 for transition in transitions[curr_state][next_char_to_process]:
-                    temp_degree_count += 1
                     new_state, write_char, direction = transition
 
                     tape_after_transition = write_char + right_tape[1:] # Add new char to leftmost part of the right side of the tape
@@ -113,7 +117,11 @@ def run_machine_on_string(string, start_state, transitions, qacc, qrej, max_dept
                             new_right_tape = "_" + tape_after_transition
 
                     if new_state == qacc:
-                        return bfs_tree, depth, num_transitions, True
+                        new_move = [new_left_tape, new_state, new_right_tape]
+                        moves.append(new_move)
+                        bfs_tree.append(moves)
+                        print(f"Accepted: {new_state}")
+                        return bfs_tree, depth, num_transitions, degree_of_nondeterminism, True
                     if new_state == qrej: # most reject states are not specified
                         # so this case will likely never be reached
                         print("String not accepted")
@@ -142,7 +150,7 @@ def run_machine_on_string(string, start_state, transitions, qacc, qrej, max_dept
     return bfs_tree, depth, num_transitions, degree_of_nondeterminism, False
 
 def main():
-    # To run: python3 traceTM_program_fdrake.py traceTM_testfiles_fdrake/equal_01s_fdrake.csv traceTM_testfiles_fdrake/equal_01s_input_fdrake.txt -t 50
+    # To run: python3 traceTM_program_fdrake.py traceTM_testfiles_fdrake/a_plus_fdrake.csv traceTM_testfiles_fdrake/a_plus_input_fdrake.txt -t 50 -o output.txt
     parser = argparse.ArgumentParser()
 
     # Positional arguments
@@ -159,42 +167,91 @@ def main():
 
     # Input strings handling - list or file
     input_strings = []
+    expected_results = []
     if len(args.input_strings) == 1 and os.path.isfile(args.input_strings[0]):
-        # Read input strings from file if file name was passed in
+        # Read input strings and expected results from file
         with open(args.input_strings[0], 'r', encoding='utf-8') as f:
-            input_strings = [line.strip() for line in f.readlines()]
+            for line in f.readlines():
+                string, expected = line.strip().split(', ')
+                input_strings.append(string)
+                expected_results.append(expected == "accept")  # Store True for accept, False for reject
     else:
-        # Otherwise assume it's a list of strings
+        # Otherwise assume it's a list of strings with no expected results
         input_strings = args.input_strings
+        expected_results = [None] * len(input_strings)  # No expected results in this case
     num_strings = len(input_strings)
 
     # Get machine formal definition
     machine = process_machine(args.machine_file)
 
+    # Prepare output file if given
+    output_file = args.output
+    if output_file:
+        output_f = open(output_file, 'a', encoding='utf-8')
+
     # Output
-    # TODO FIX THIS FUNCTIONALITY so that strings read from files have correct flags and one off strings don't
+    num_wrong = 0
     for index, input_string in enumerate(input_strings):
         # Run the machine on the string
-        tree, depth, num_transitions, degree_nondet, status = run_machine_on_string(input_string, machine.start, machine.transitions, machine.accept[0], machine.reject[0], args.depth)
+        tree, depth, num_transitions, degree_nondet, status = run_machine_on_string(
+            input_string, 
+            machine.start, 
+            machine.transitions, 
+            machine.accept[0], 
+            machine.reject[0], 
+            args.depth, 
+            args.time
+        )
         depth = depth - 1 # Because the depth accounted for the first state before any transitions
 
-        print("Name of machine:", machine.desc)
-        print("Input string:", input_string)
-        print("Tree depth:", depth)
-        print("Total number of transitions simulated:", num_transitions)
+        # Prepare results
+        result = []
+        result.append(f"Name of machine: {machine.desc}")
+        result.append(f"Input string: {input_string}")
+        result.append(f"Tree depth: {depth}")
+        result.append(f"Total number of transitions simulated: {num_transitions}")
+        result.append(f"Degree of nondeterminism: {degree_nondet}")
 
-        # TODO check depth vs num transitions
-        if status == True: # If string was accepted
-            print(f"String accepted in {depth} transitions")
-        else: # Otherwise string was rejected
-            print(f"String rejected in {depth} transitions")
-        # note: if the machine is deterministic depth & num transitions should be the same
+        # Accepted or rejected
+        if status:
+            result.append(f"String accepted in {depth} transitions")
+        else:
+            result.append(f"String rejected in {depth} transitions")
 
+        # Check answer
+        expected = expected_results[index] if expected_results else None
+        if expected is not None:
+            result.append("Expected result: " + ("accept" if expected else "reject"))
+            if status != expected:
+                num_wrong += 1
+
+        # Tree structure
+        result.append("Tree levels:")
         for level in tree:
-            print(level)
+            result.append(str(level))
 
+        # Stdout
+        for line in result:
+            print(line)
+
+        # Write to file
+        if output_file:
+            output_f.write("\n".join(result) + "\n\n")
+
+        # Separator between inputs
         if index + 1 != num_strings:
             print()
+            if output_file:
+                output_f.write("\n")
+
+    if expected is not None:
+        print(f"{num_wrong} wrong")
+        if output_file:
+            output_f.write(f"{num_wrong} wrong")
+
+    # Close file
+    if output_file:
+        output_f.close()
 
 if __name__ == "__main__":
     main()

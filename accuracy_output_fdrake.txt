@@ -1,0 +1,560 @@
+Name of machine: a plus
+Input string: a
+Tree depth: 0
+Total number of transitions simulated: 2
+Degree of nondeterminism: 2
+String accepted in 0 transitions
+Expected result: accept
+Tree levels:
+[['', 'q1', 'a']]
+[['', 'q3', 'a_']]
+
+
+Name of machine: a plus
+Input string: aa
+Tree depth: 1
+Total number of transitions simulated: 4
+Degree of nondeterminism: 2
+String accepted in 1 transitions
+Expected result: accept
+Tree levels:
+[['', 'q1', 'aa']]
+[['a', 'q1', 'a'], ['a', 'q2', 'a']]
+[['a', 'q3', 'a_']]
+
+
+Name of machine: a plus
+Input string: aaaaaa
+Tree depth: 5
+Total number of transitions simulated: 12
+Degree of nondeterminism: 2
+String accepted in 5 transitions
+Expected result: accept
+Tree levels:
+[['', 'q1', 'aaaaaa']]
+[['a', 'q1', 'aaaaa'], ['a', 'q2', 'aaaaa']]
+[['aa', 'q1', 'aaaa'], ['aa', 'q2', 'aaaa']]
+[['aaa', 'q1', 'aaa'], ['aaa', 'q2', 'aaa']]
+[['aaaa', 'q1', 'aa'], ['aaaa', 'q2', 'aa']]
+[['aaaaa', 'q1', 'a'], ['aaaaa', 'q2', 'a']]
+[['aaaaa', 'q3', 'a_']]
+
+
+Name of machine: a plus
+Input string: aaaaaaaa
+Tree depth: 7
+Total number of transitions simulated: 16
+Degree of nondeterminism: 2
+String accepted in 7 transitions
+Expected result: accept
+Tree levels:
+[['', 'q1', 'aaaaaaaa']]
+[['a', 'q1', 'aaaaaaa'], ['a', 'q2', 'aaaaaaa']]
+[['aa', 'q1', 'aaaaaa'], ['aa', 'q2', 'aaaaaa']]
+[['aaa', 'q1', 'aaaaa'], ['aaa', 'q2', 'aaaaa']]
+[['aaaa', 'q1', 'aaaa'], ['aaaa', 'q2', 'aaaa']]
+[['aaaaa', 'q1', 'aaa'], ['aaaaa', 'q2', 'aaa']]
+[['aaaaaa', 'q1', 'aa'], ['aaaaaa', 'q2', 'aa']]
+[['aaaaaaa', 'q1', 'a'], ['aaaaaaa', 'q2', 'a']]
+[['aaaaaaa', 'q3', 'a_']]
+
+
+Name of machine: a plus
+Input string: aaaaaaaaaaa
+Tree depth: 10
+Total number of transitions simulated: 22
+Degree of nondeterminism: 2
+String accepted in 10 transitions
+Expected result: accept
+Tree levels:
+[['', 'q1', 'aaaaaaaaaaa']]
+[['a', 'q1', 'aaaaaaaaaa'], ['a', 'q2', 'aaaaaaaaaa']]
+[['aa', 'q1', 'aaaaaaaaa'], ['aa', 'q2', 'aaaaaaaaa']]
+[['aaa', 'q1', 'aaaaaaaa'], ['aaa', 'q2', 'aaaaaaaa']]
+[['aaaa', 'q1', 'aaaaaaa'], ['aaaa', 'q2', 'aaaaaaa']]
+[['aaaaa', 'q1', 'aaaaaa'], ['aaaaa', 'q2', 'aaaaaa']]
+[['aaaaaa', 'q1', 'aaaaa'], ['aaaaaa', 'q2', 'aaaaa']]
+[['aaaaaaa', 'q1', 'aaaa'], ['aaaaaaa', 'q2', 'aaaa']]
+[['aaaaaaaa', 'q1', 'aaa'], ['aaaaaaaa', 'q2', 'aaa']]
+[['aaaaaaaaa', 'q1', 'aa'], ['aaaaaaaaa', 'q2', 'aa']]
+[['aaaaaaaaaa', 'q1', 'a'], ['aaaaaaaaaa', 'q2', 'a']]
+[['aaaaaaaaaa', 'q3', 'a_']]
+
+
+Name of machine: a plus
+Input string: aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+Tree depth: 34
+Total number of transitions simulated: 70
+Degree of nondeterminism: 2
+String accepted in 34 transitions
+Expected result: accept
+Tree levels:
+[['', 'q1', 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa']]
+[['a', 'q1', 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'], ['a', 'q2', 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa']]
+[['aa', 'q1', 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'], ['aa', 'q2', 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa']]
+[['aaa', 'q1', 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'], ['aaa', 'q2', 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa']]
+[['aaaa', 'q1', 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'], ['aaaa', 'q2', 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa']]
+[['aaaaa', 'q1', 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'], ['aaaaa', 'q2', 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa']]
+[['aaaaaa', 'q1', 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaa'], ['aaaaaa', 'q2', 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaa']]
+[['aaaaaaa', 'q1', 'aaaaaaaaaaaaaaaaaaaaaaaaaaaa'], ['aaaaaaa', 'q2', 'aaaaaaaaaaaaaaaaaaaaaaaaaaaa']]
+[['aaaaaaaa', 'q1', 'aaaaaaaaaaaaaaaaaaaaaaaaaaa'], ['aaaaaaaa', 'q2', 'aaaaaaaaaaaaaaaaaaaaaaaaaaa']]
+[['aaaaaaaaa', 'q1', 'aaaaaaaaaaaaaaaaaaaaaaaaaa'], ['aaaaaaaaa', 'q2', 'aaaaaaaaaaaaaaaaaaaaaaaaaa']]
+[['aaaaaaaaaa', 'q1', 'aaaaaaaaaaaaaaaaaaaaaaaaa'], ['aaaaaaaaaa', 'q2', 'aaaaaaaaaaaaaaaaaaaaaaaaa']]
+[['aaaaaaaaaaa', 'q1', 'aaaaaaaaaaaaaaaaaaaaaaaa'], ['aaaaaaaaaaa', 'q2', 'aaaaaaaaaaaaaaaaaaaaaaaa']]
+[['aaaaaaaaaaaa', 'q1', 'aaaaaaaaaaaaaaaaaaaaaaa'], ['aaaaaaaaaaaa', 'q2', 'aaaaaaaaaaaaaaaaaaaaaaa']]
+[['aaaaaaaaaaaaa', 'q1', 'aaaaaaaaaaaaaaaaaaaaaa'], ['aaaaaaaaaaaaa', 'q2', 'aaaaaaaaaaaaaaaaaaaaaa']]
+[['aaaaaaaaaaaaaa', 'q1', 'aaaaaaaaaaaaaaaaaaaaa'], ['aaaaaaaaaaaaaa', 'q2', 'aaaaaaaaaaaaaaaaaaaaa']]
+[['aaaaaaaaaaaaaaa', 'q1', 'aaaaaaaaaaaaaaaaaaaa'], ['aaaaaaaaaaaaaaa', 'q2', 'aaaaaaaaaaaaaaaaaaaa']]
+[['aaaaaaaaaaaaaaaa', 'q1', 'aaaaaaaaaaaaaaaaaaa'], ['aaaaaaaaaaaaaaaa', 'q2', 'aaaaaaaaaaaaaaaaaaa']]
+[['aaaaaaaaaaaaaaaaa', 'q1', 'aaaaaaaaaaaaaaaaaa'], ['aaaaaaaaaaaaaaaaa', 'q2', 'aaaaaaaaaaaaaaaaaa']]
+[['aaaaaaaaaaaaaaaaaa', 'q1', 'aaaaaaaaaaaaaaaaa'], ['aaaaaaaaaaaaaaaaaa', 'q2', 'aaaaaaaaaaaaaaaaa']]
+[['aaaaaaaaaaaaaaaaaaa', 'q1', 'aaaaaaaaaaaaaaaa'], ['aaaaaaaaaaaaaaaaaaa', 'q2', 'aaaaaaaaaaaaaaaa']]
+[['aaaaaaaaaaaaaaaaaaaa', 'q1', 'aaaaaaaaaaaaaaa'], ['aaaaaaaaaaaaaaaaaaaa', 'q2', 'aaaaaaaaaaaaaaa']]
+[['aaaaaaaaaaaaaaaaaaaaa', 'q1', 'aaaaaaaaaaaaaa'], ['aaaaaaaaaaaaaaaaaaaaa', 'q2', 'aaaaaaaaaaaaaa']]
+[['aaaaaaaaaaaaaaaaaaaaaa', 'q1', 'aaaaaaaaaaaaa'], ['aaaaaaaaaaaaaaaaaaaaaa', 'q2', 'aaaaaaaaaaaaa']]
+[['aaaaaaaaaaaaaaaaaaaaaaa', 'q1', 'aaaaaaaaaaaa'], ['aaaaaaaaaaaaaaaaaaaaaaa', 'q2', 'aaaaaaaaaaaa']]
+[['aaaaaaaaaaaaaaaaaaaaaaaa', 'q1', 'aaaaaaaaaaa'], ['aaaaaaaaaaaaaaaaaaaaaaaa', 'q2', 'aaaaaaaaaaa']]
+[['aaaaaaaaaaaaaaaaaaaaaaaaa', 'q1', 'aaaaaaaaaa'], ['aaaaaaaaaaaaaaaaaaaaaaaaa', 'q2', 'aaaaaaaaaa']]
+[['aaaaaaaaaaaaaaaaaaaaaaaaaa', 'q1', 'aaaaaaaaa'], ['aaaaaaaaaaaaaaaaaaaaaaaaaa', 'q2', 'aaaaaaaaa']]
+[['aaaaaaaaaaaaaaaaaaaaaaaaaaa', 'q1', 'aaaaaaaa'], ['aaaaaaaaaaaaaaaaaaaaaaaaaaa', 'q2', 'aaaaaaaa']]
+[['aaaaaaaaaaaaaaaaaaaaaaaaaaaa', 'q1', 'aaaaaaa'], ['aaaaaaaaaaaaaaaaaaaaaaaaaaaa', 'q2', 'aaaaaaa']]
+[['aaaaaaaaaaaaaaaaaaaaaaaaaaaaa', 'q1', 'aaaaaa'], ['aaaaaaaaaaaaaaaaaaaaaaaaaaaaa', 'q2', 'aaaaaa']]
+[['aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa', 'q1', 'aaaaa'], ['aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa', 'q2', 'aaaaa']]
+[['aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa', 'q1', 'aaaa'], ['aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa', 'q2', 'aaaa']]
+[['aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa', 'q1', 'aaa'], ['aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa', 'q2', 'aaa']]
+[['aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa', 'q1', 'aa'], ['aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa', 'q2', 'aa']]
+[['aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa', 'q1', 'a'], ['aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa', 'q2', 'a']]
+[['aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa', 'q3', 'a_']]
+
+0 wrongName of machine: {w | w has the same number of 0's and 1's} Nondeterministic
+Input string: 01
+Tree depth: 3
+Total number of transitions simulated: 7
+Degree of nondeterminism: 2
+String accepted in 3 transitions
+Expected result: accept
+Tree levels:
+[['', 'q0', '01']]
+[['_', 'q1', '1']]
+[['', 'q3', '_x']]
+[['_', 'q4', 'x'], ['_', 'q5', 'x']]
+[['_', 'q3', 'x_'], ['_x_', 'qacc', '']]
+
+
+Name of machine: {w | w has the same number of 0's and 1's} Nondeterministic
+Input string: 10
+Tree depth: 3
+Total number of transitions simulated: 7
+Degree of nondeterminism: 2
+String accepted in 3 transitions
+Expected result: accept
+Tree levels:
+[['', 'q0', '10']]
+[['_', 'q2', '0']]
+[['', 'q3', '_x']]
+[['_', 'q4', 'x'], ['_', 'q5', 'x']]
+[['_', 'q3', 'x_'], ['_x_', 'qacc', '']]
+
+
+Name of machine: {w | w has the same number of 0's and 1's} Nondeterministic
+Input string: 1100
+Tree depth: 13
+Total number of transitions simulated: 20
+Degree of nondeterminism: 2
+String accepted in 13 transitions
+Expected result: accept
+Tree levels:
+[['', 'q0', '1100']]
+[['_', 'q2', '100']]
+[['_1', 'q2', '00']]
+[['_', 'q3', '1x0']]
+[['', 'q3', '_1x0']]
+[['_', 'q4', '1x0'], ['_', 'q5', '1x0']]
+[['_x', 'q2', 'x0']]
+[['_xx', 'q2', '0']]
+[['_x', 'q3', 'xx']]
+[['_', 'q3', 'xxx']]
+[['', 'q3', '_xxx']]
+[['_', 'q4', 'xxx'], ['_', 'q5', 'xxx']]
+[['_x', 'q4', 'xx'], ['_x', 'q5', 'xx']]
+[['_xx', 'q4', 'x'], ['_xx', 'q5', 'x']]
+[['_xx', 'q3', 'x_'], ['_xxx_', 'qacc', '']]
+
+
+Name of machine: {w | w has the same number of 0's and 1's} Nondeterministic
+Input string: 1010
+Tree depth: 11
+Total number of transitions simulated: 19
+Degree of nondeterminism: 2
+String accepted in 11 transitions
+Expected result: accept
+Tree levels:
+[['', 'q0', '1010']]
+[['_', 'q2', '010']]
+[['', 'q3', '_x10']]
+[['_', 'q4', 'x10'], ['_', 'q5', 'x10']]
+[['_x', 'q4', '10'], ['_x', 'q5', '10']]
+[['_xx', 'q2', '0']]
+[['_x', 'q3', 'xx']]
+[['_', 'q3', 'xxx']]
+[['', 'q3', '_xxx']]
+[['_', 'q4', 'xxx'], ['_', 'q5', 'xxx']]
+[['_x', 'q4', 'xx'], ['_x', 'q5', 'xx']]
+[['_xx', 'q4', 'x'], ['_xx', 'q5', 'x']]
+[['_xx', 'q3', 'x_'], ['_xxx_', 'qacc', '']]
+
+
+Name of machine: {w | w has the same number of 0's and 1's} Nondeterministic
+Input string: 0110
+Tree depth: 11
+Total number of transitions simulated: 19
+Degree of nondeterminism: 2
+String accepted in 11 transitions
+Expected result: accept
+Tree levels:
+[['', 'q0', '0110']]
+[['_', 'q1', '110']]
+[['', 'q3', '_x10']]
+[['_', 'q4', 'x10'], ['_', 'q5', 'x10']]
+[['_x', 'q4', '10'], ['_x', 'q5', '10']]
+[['_xx', 'q2', '0']]
+[['_x', 'q3', 'xx']]
+[['_', 'q3', 'xxx']]
+[['', 'q3', '_xxx']]
+[['_', 'q4', 'xxx'], ['_', 'q5', 'xxx']]
+[['_x', 'q4', 'xx'], ['_x', 'q5', 'xx']]
+[['_xx', 'q4', 'x'], ['_xx', 'q5', 'x']]
+[['_xx', 'q3', 'x_'], ['_xxx_', 'qacc', '']]
+
+
+Name of machine: {w | w has the same number of 0's and 1's} Nondeterministic
+Input string: 110011
+Tree depth: 16
+Total number of transitions simulated: 21
+Degree of nondeterminism: 2
+String rejected in 16 transitions
+Expected result: reject
+Tree levels:
+[['', 'q0', '110011']]
+[['_', 'q2', '10011']]
+[['_1', 'q2', '0011']]
+[['_', 'q3', '1x011']]
+[['', 'q3', '_1x011']]
+[['_', 'q4', '1x011'], ['_', 'q5', '1x011']]
+[['_x', 'q2', 'x011']]
+[['_xx', 'q2', '011']]
+[['_x', 'q3', 'xx11']]
+[['_', 'q3', 'xxx11']]
+[['', 'q3', '_xxx11']]
+[['_', 'q4', 'xxx11'], ['_', 'q5', 'xxx11']]
+[['_x', 'q4', 'xx11'], ['_x', 'q5', 'xx11']]
+[['_xx', 'q4', 'x11'], ['_xx', 'q5', 'x11']]
+[['_xxx', 'q4', '11'], ['_xxx', 'q5', '11']]
+[['_xxxx', 'q2', '1']]
+[['_xxxx1', 'q2', '']]
+
+
+Name of machine: {w | w has the same number of 0's and 1's} Nondeterministic
+Input string: 101010
+Tree depth: 23
+Total number of transitions simulated: 37
+Degree of nondeterminism: 2
+String accepted in 23 transitions
+Expected result: accept
+Tree levels:
+[['', 'q0', '101010']]
+[['_', 'q2', '01010']]
+[['', 'q3', '_x1010']]
+[['_', 'q4', 'x1010'], ['_', 'q5', 'x1010']]
+[['_x', 'q4', '1010'], ['_x', 'q5', '1010']]
+[['_xx', 'q2', '010']]
+[['_x', 'q3', 'xx10']]
+[['_', 'q3', 'xxx10']]
+[['', 'q3', '_xxx10']]
+[['_', 'q4', 'xxx10'], ['_', 'q5', 'xxx10']]
+[['_x', 'q4', 'xx10'], ['_x', 'q5', 'xx10']]
+[['_xx', 'q4', 'x10'], ['_xx', 'q5', 'x10']]
+[['_xxx', 'q4', '10'], ['_xxx', 'q5', '10']]
+[['_xxxx', 'q2', '0']]
+[['_xxx', 'q3', 'xx']]
+[['_xx', 'q3', 'xxx']]
+[['_x', 'q3', 'xxxx']]
+[['_', 'q3', 'xxxxx']]
+[['', 'q3', '_xxxxx']]
+[['_', 'q4', 'xxxxx'], ['_', 'q5', 'xxxxx']]
+[['_x', 'q4', 'xxxx'], ['_x', 'q5', 'xxxx']]
+[['_xx', 'q4', 'xxx'], ['_xx', 'q5', 'xxx']]
+[['_xxx', 'q4', 'xx'], ['_xxx', 'q5', 'xx']]
+[['_xxxx', 'q4', 'x'], ['_xxxx', 'q5', 'x']]
+[['_xxxx', 'q3', 'x_'], ['_xxxxx_', 'qacc', '']]
+
+
+Name of machine: {w | w has the same number of 0's and 1's} Nondeterministic
+Input string: 000111
+Tree depth: 29
+Total number of transitions simulated: 40
+Degree of nondeterminism: 2
+String accepted in 29 transitions
+Expected result: accept
+Tree levels:
+[['', 'q0', '000111']]
+[['_', 'q1', '00111']]
+[['_0', 'q1', '0111']]
+[['_00', 'q1', '111']]
+[['_0', 'q3', '0x11']]
+[['_', 'q3', '00x11']]
+[['', 'q3', '_00x11']]
+[['_', 'q4', '00x11'], ['_', 'q5', '00x11']]
+[['_x', 'q1', '0x11']]
+[['_x0', 'q1', 'x11']]
+[['_x0x', 'q1', '11']]
+[['_x0', 'q3', 'xx1']]
+[['_x', 'q3', '0xx1']]
+[['_', 'q3', 'x0xx1']]
+[['', 'q3', '_x0xx1']]
+[['_', 'q4', 'x0xx1'], ['_', 'q5', 'x0xx1']]
+[['_x', 'q4', '0xx1'], ['_x', 'q5', '0xx1']]
+[['_xx', 'q1', 'xx1']]
+[['_xxx', 'q1', 'x1']]
+[['_xxxx', 'q1', '1']]
+[['_xxx', 'q3', 'xx']]
+[['_xx', 'q3', 'xxx']]
+[['_x', 'q3', 'xxxx']]
+[['_', 'q3', 'xxxxx']]
+[['', 'q3', '_xxxxx']]
+[['_', 'q4', 'xxxxx'], ['_', 'q5', 'xxxxx']]
+[['_x', 'q4', 'xxxx'], ['_x', 'q5', 'xxxx']]
+[['_xx', 'q4', 'xxx'], ['_xx', 'q5', 'xxx']]
+[['_xxx', 'q4', 'xx'], ['_xxx', 'q5', 'xx']]
+[['_xxxx', 'q4', 'x'], ['_xxxx', 'q5', 'x']]
+[['_xxxx', 'q3', 'x_'], ['_xxxxx_', 'qacc', '']]
+
+
+Name of machine: {w | w has the same number of 0's and 1's} Nondeterministic
+Input string: 111000
+Tree depth: 29
+Total number of transitions simulated: 40
+Degree of nondeterminism: 2
+String accepted in 29 transitions
+Expected result: accept
+Tree levels:
+[['', 'q0', '111000']]
+[['_', 'q2', '11000']]
+[['_1', 'q2', '1000']]
+[['_11', 'q2', '000']]
+[['_1', 'q3', '1x00']]
+[['_', 'q3', '11x00']]
+[['', 'q3', '_11x00']]
+[['_', 'q4', '11x00'], ['_', 'q5', '11x00']]
+[['_x', 'q2', '1x00']]
+[['_x1', 'q2', 'x00']]
+[['_x1x', 'q2', '00']]
+[['_x1', 'q3', 'xx0']]
+[['_x', 'q3', '1xx0']]
+[['_', 'q3', 'x1xx0']]
+[['', 'q3', '_x1xx0']]
+[['_', 'q4', 'x1xx0'], ['_', 'q5', 'x1xx0']]
+[['_x', 'q4', '1xx0'], ['_x', 'q5', '1xx0']]
+[['_xx', 'q2', 'xx0']]
+[['_xxx', 'q2', 'x0']]
+[['_xxxx', 'q2', '0']]
+[['_xxx', 'q3', 'xx']]
+[['_xx', 'q3', 'xxx']]
+[['_x', 'q3', 'xxxx']]
+[['_', 'q3', 'xxxxx']]
+[['', 'q3', '_xxxxx']]
+[['_', 'q4', 'xxxxx'], ['_', 'q5', 'xxxxx']]
+[['_x', 'q4', 'xxxx'], ['_x', 'q5', 'xxxx']]
+[['_xx', 'q4', 'xxx'], ['_xx', 'q5', 'xxx']]
+[['_xxx', 'q4', 'xx'], ['_xxx', 'q5', 'xx']]
+[['_xxxx', 'q4', 'x'], ['_xxxx', 'q5', 'x']]
+[['_xxxx', 'q3', 'x_'], ['_xxxxx_', 'qacc', '']]
+
+
+Name of machine: {w | w has the same number of 0's and 1's} Nondeterministic
+Input string: 0
+Tree depth: 1
+Total number of transitions simulated: 1
+Degree of nondeterminism: 1
+String rejected in 1 transitions
+Expected result: reject
+Tree levels:
+[['', 'q0', '0']]
+[['_', 'q1', '']]
+
+
+Name of machine: {w | w has the same number of 0's and 1's} Nondeterministic
+Input string: 1
+Tree depth: 1
+Total number of transitions simulated: 1
+Degree of nondeterminism: 1
+String rejected in 1 transitions
+Expected result: reject
+Tree levels:
+[['', 'q0', '1']]
+[['_', 'q2', '']]
+
+
+Name of machine: {w | w has the same number of 0's and 1's} Nondeterministic
+Input string: 001
+Tree depth: 7
+Total number of transitions simulated: 8
+Degree of nondeterminism: 2
+String rejected in 7 transitions
+Expected result: reject
+Tree levels:
+[['', 'q0', '001']]
+[['_', 'q1', '01']]
+[['_0', 'q1', '1']]
+[['_', 'q3', '0x']]
+[['', 'q3', '_0x']]
+[['_', 'q4', '0x'], ['_', 'q5', '0x']]
+[['_x', 'q1', 'x']]
+[['_xx', 'q1', '']]
+
+
+Name of machine: {w | w has the same number of 0's and 1's} Nondeterministic
+Input string: 100
+Tree depth: 5
+Total number of transitions simulated: 7
+Degree of nondeterminism: 2
+String rejected in 5 transitions
+Expected result: reject
+Tree levels:
+[['', 'q0', '100']]
+[['_', 'q2', '00']]
+[['', 'q3', '_x0']]
+[['_', 'q4', 'x0'], ['_', 'q5', 'x0']]
+[['_x', 'q4', '0'], ['_x', 'q5', '0']]
+[['_xx', 'q1', '']]
+
+
+Name of machine: {w | w has the same number of 0's and 1's} Nondeterministic
+Input string: 111
+Tree depth: 3
+Total number of transitions simulated: 3
+Degree of nondeterminism: 1
+String rejected in 3 transitions
+Expected result: reject
+Tree levels:
+[['', 'q0', '111']]
+[['_', 'q2', '11']]
+[['_1', 'q2', '1']]
+[['_11', 'q2', '']]
+
+
+Name of machine: {w | w has the same number of 0's and 1's} Nondeterministic
+Input string: 000
+Tree depth: 3
+Total number of transitions simulated: 3
+Degree of nondeterminism: 1
+String rejected in 3 transitions
+Expected result: reject
+Tree levels:
+[['', 'q0', '000']]
+[['_', 'q1', '00']]
+[['_0', 'q1', '0']]
+[['_00', 'q1', '']]
+
+
+Name of machine: {w | w has the same number of 0's and 1's} Nondeterministic
+Input string: 110
+Tree depth: 7
+Total number of transitions simulated: 8
+Degree of nondeterminism: 2
+String rejected in 7 transitions
+Expected result: reject
+Tree levels:
+[['', 'q0', '110']]
+[['_', 'q2', '10']]
+[['_1', 'q2', '0']]
+[['_', 'q3', '1x']]
+[['', 'q3', '_1x']]
+[['_', 'q4', '1x'], ['_', 'q5', '1x']]
+[['_x', 'q2', 'x']]
+[['_xx', 'q2', '']]
+
+
+Name of machine: {w | w has the same number of 0's and 1's} Nondeterministic
+Input string: 1011
+Tree depth: 6
+Total number of transitions simulated: 8
+Degree of nondeterminism: 2
+String rejected in 6 transitions
+Expected result: reject
+Tree levels:
+[['', 'q0', '1011']]
+[['_', 'q2', '011']]
+[['', 'q3', '_x11']]
+[['_', 'q4', 'x11'], ['_', 'q5', 'x11']]
+[['_x', 'q4', '11'], ['_x', 'q5', '11']]
+[['_xx', 'q2', '1']]
+[['_xx1', 'q2', '']]
+
+
+Name of machine: {w | w has the same number of 0's and 1's} Nondeterministic
+Input string: 10011
+Tree depth: 13
+Total number of transitions simulated: 19
+Degree of nondeterminism: 2
+String rejected in 13 transitions
+Expected result: reject
+Tree levels:
+[['', 'q0', '10011']]
+[['_', 'q2', '0011']]
+[['', 'q3', '_x011']]
+[['_', 'q4', 'x011'], ['_', 'q5', 'x011']]
+[['_x', 'q4', '011'], ['_x', 'q5', '011']]
+[['_xx', 'q1', '11']]
+[['_x', 'q3', 'xx1']]
+[['_', 'q3', 'xxx1']]
+[['', 'q3', '_xxx1']]
+[['_', 'q4', 'xxx1'], ['_', 'q5', 'xxx1']]
+[['_x', 'q4', 'xx1'], ['_x', 'q5', 'xx1']]
+[['_xx', 'q4', 'x1'], ['_xx', 'q5', 'x1']]
+[['_xxx', 'q4', '1'], ['_xxx', 'q5', '1']]
+[['_xxxx', 'q2', '']]
+
+
+Name of machine: {w | w has the same number of 0's and 1's} Nondeterministic
+Input string: 1110001
+Tree depth: 31
+Total number of transitions simulated: 40
+Degree of nondeterminism: 2
+String rejected in 31 transitions
+Expected result: reject
+Tree levels:
+[['', 'q0', '1110001']]
+[['_', 'q2', '110001']]
+[['_1', 'q2', '10001']]
+[['_11', 'q2', '0001']]
+[['_1', 'q3', '1x001']]
+[['_', 'q3', '11x001']]
+[['', 'q3', '_11x001']]
+[['_', 'q4', '11x001'], ['_', 'q5', '11x001']]
+[['_x', 'q2', '1x001']]
+[['_x1', 'q2', 'x001']]
+[['_x1x', 'q2', '001']]
+[['_x1', 'q3', 'xx01']]
+[['_x', 'q3', '1xx01']]
+[['_', 'q3', 'x1xx01']]
+[['', 'q3', '_x1xx01']]
+[['_', 'q4', 'x1xx01'], ['_', 'q5', 'x1xx01']]
+[['_x', 'q4', '1xx01'], ['_x', 'q5', '1xx01']]
+[['_xx', 'q2', 'xx01']]
+[['_xxx', 'q2', 'x01']]
+[['_xxxx', 'q2', '01']]
+[['_xxx', 'q3', 'xx1']]
+[['_xx', 'q3', 'xxx1']]
+[['_x', 'q3', 'xxxx1']]
+[['_', 'q3', 'xxxxx1']]
+[['', 'q3', '_xxxxx1']]
+[['_', 'q4', 'xxxxx1'], ['_', 'q5', 'xxxxx1']]
+[['_x', 'q4', 'xxxx1'], ['_x', 'q5', 'xxxx1']]
+[['_xx', 'q4', 'xxx1'], ['_xx', 'q5', 'xxx1']]
+[['_xxx', 'q4', 'xx1'], ['_xxx', 'q5', 'xx1']]
+[['_xxxx', 'q4', 'x1'], ['_xxxx', 'q5', 'x1']]
+[['_xxxxx', 'q4', '1'], ['_xxxxx', 'q5', '1']]
+[['_xxxxxx', 'q2', '']]
+
+0 wrong
