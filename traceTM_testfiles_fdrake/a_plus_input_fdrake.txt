@@ -1,6 +1,6 @@
-a
-aa
-aaaaaa
-aaaaaaaa
-aaaaaaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+a, accept
+aa, accept
+aaaaaa, accept
+aaaaaaaa, accept
+aaaaaaaaaaa, accept
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa, accept

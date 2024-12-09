@@ -1,4 +1,9 @@
-racecar
-tacocat
-francisicnarf
-francisicnraf
+abba, accept
+aabb, reject
+ababa, accept
+bbaab, reject
+aabaa, accept
+babab, accept
+abbaabba, accept
+bbababbab, reject
+aabbbba, reject

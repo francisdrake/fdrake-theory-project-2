@@ -1,19 +1,20 @@
-01
-10
-1100
-1010
-0110
-110011
-101010
-000111
-111000
-0
-1
-001
-100
-111
-000
-110
-1011
-10011
-1110001
+01, accept
+10, accept
+1100, accept
+1010, accept
+0110, accept
+110011, reject
+101010, accept
+000111, accept
+111000, accept
+0, reject
+1, reject
+001, reject
+100, reject
+111, reject
+000, reject
+110, reject
+1011, reject
+10011, reject
+1110001, reject
+000000000000000111111111111111, accept
